@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct PromovaTestApp: App {
+    
+    let store = Store(initialState: ListFeature.State()) {
+        ListFeature()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AnimalsListView(store: self.store)
         }
     }
 }

@@ -9,17 +9,6 @@ import Foundation
 
 struct Animal: Codable, Equatable, Hashable {
     
-    static func == (lhs: Animal, rhs: Animal) -> Bool {
-        lhs.title == rhs.title
-    }
-    
-    let title: String
-    let description: String
-    let image: URL
-    let order: Int
-    let status: Status
-    let content: [Fact]?
-    
     enum Status: String, Codable, Hashable {
         case paid
         case free
@@ -29,6 +18,21 @@ struct Animal: Codable, Equatable, Hashable {
     struct Fact: Codable, Hashable {
         let fact: String
         let image: URL
+    }
+    
+    // MARK: - Properties
+    
+    let title: String
+    let description: String
+    let image: URL
+    let order: Int
+    let status: Status
+    let content: [Fact]?
+    
+    // MARK: - Static
+    
+    static func == (lhs: Animal, rhs: Animal) -> Bool {
+        lhs.title == rhs.title
     }
     
     static var mock: Self {

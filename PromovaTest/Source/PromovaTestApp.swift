@@ -11,8 +11,8 @@ import ComposableArchitecture
 @main
 struct PromovaTestApp: App {
     
-    let store = Store(initialState: ListFeature.State()) {
-        ListFeature()
+    let store = Store(initialState: AnimalsListFeature.State()) {
+        AnimalsListFeature()
     }
     
     var body: some Scene {
